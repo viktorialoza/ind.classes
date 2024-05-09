@@ -1,4 +1,5 @@
 public class Library {
+    private String name;
     private int numberOfBooks;
     private int readers;
     private String typeOfBooks;
@@ -10,9 +11,7 @@ public class Library {
         this.typeOfBooks = typeOfBooks;
         this.location = location;
     }
-    public void place(){
-        System.out.println("This library is locating");
-    }
+
     public int getNumberOfBooks(){
         return numberOfBooks;
     }
@@ -34,17 +33,16 @@ public class Library {
     public void setTypeOfBooks(String typeOfBooks){
         this.typeOfBooks = typeOfBooks;
     }
-    public void setLocation(String location){
-        this.location = location;
+    public void displayLibraryInfo() {
+        System.out.println("Library Name: " + name);
+        System.out.println("Location: " + location);
+        System.out.println("Number of Books: " + numberOfBooks);
+        System.out.println("Number of Readers: " + readers);
+        System.out.println("Type of Books: " + typeOfBooks);
     }
-    public void increaseNumberOfBooks(int amount){
-        this.numberOfBooks += amount;
-        if(this.numberOfBooks > 300){
-            System.out.println("Книг забагато");
-        }
-        else{
-            System.out.println("К-сть книг припустима");
-        }
+    public void addBooks(int quantity) {
+        numberOfBooks += quantity;
+        System.out.println(quantity + " books added to the library. Total number of books: " + numberOfBooks);
     }
 
 }

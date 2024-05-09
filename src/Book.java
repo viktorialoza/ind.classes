@@ -5,11 +5,12 @@ public class Book {
     private boolean isBorrowed;
     private Student student;
 
-    public Book(String title, String author,int numberOfPages,boolean isBorrowed){
+    public Book(String title, String author,int numberOfPages){
         this.title = title;
         this.author = author;
         this.numberOfPages = numberOfPages;
-        this.isBorrowed = isBorrowed;
+        this.isBorrowed = false;
+        this.student = null;
     }
     public void setStudent(Student student){
         this.student = student;
@@ -42,7 +43,28 @@ public class Book {
         this.isBorrowed = isBorrowed;
     }
     public boolean isBusy(){
-        return false;
+        return isBorrowed;
     }
+    public void borrow(Student student){
+        if(!isBorrowed){
+            this.student = student;
+            this.isBorrowed = true;
+            System.out.println("Книгу '"+title+"'позичено студенту'"+student.getName()+"'");
+        }
+        else{
+            System.out.println("Книга '"+title+"'вже позичена");
+        }
+    }
+    public void returnBook(){
+        if (isBorrowed){
+            isBorrowed = false;
+            student = null;
+            System.out.println("Книга повернена успішно!");
+        }
+        else{
+            System.out.println("Ця книга не запозичена");
+        }
+    }
+
 
 }

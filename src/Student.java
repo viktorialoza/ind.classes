@@ -4,7 +4,6 @@ public class Student {
     private int course;
     private String profession;
     private Library library;
-    private String bookName;
 
     public Student(int age,String name,int course,String profession){
         this.age = age;
@@ -30,10 +29,12 @@ public class Student {
     public String getProfession(){
         return profession;
     }
-    public String getBookName(){
-        return bookName;
+    public void borrowBook(Book book){
+        book.borrow(this);
     }
-    public void setBookName(String bookName){
-        this.bookName = bookName;
+    public void returnBook(Book book){
+        book.returnBook();
     }
+
+
 }
