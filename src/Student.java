@@ -35,6 +35,8 @@ public class Student {
     public void returnBook(Book book){
         book.returnBook();
     }
-
+    public void displayLibraryInfo(){
+        library.displayLibraryInfo();
+    }
 
 }
